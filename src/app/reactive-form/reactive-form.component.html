@@ -1,0 +1,25 @@
+
+  <form [formGroup]="myform" >
+    <div class="form-group">
+      <input type="text" name="name" class="form-control" formControlName="firstName">
+      <div *ngIf= "myform.controls['firstName'].hasError('required')" class= "alert alert-danger"> required</div>
+      <div *ngIf= "myform.controls['firstName'].hasError('minlength')" class= "alert alert-danger">
+         min lenghth should 
+
+      </div>
+      
+   
+    </div>
+      
+    <div class="form-group">
+      <input type="text" name="lastName" class="form-control" formControlName="lastName">
+    </div>
+    <div class="form-group">
+      <input type="text" name="age" class="form-control">
+    </div>
+   
+    <button type="submit" class="btn btn-primary" [disabled]= "myform.invalid">Submit</button>
+  
+  </form>
+
+  <hr/>
